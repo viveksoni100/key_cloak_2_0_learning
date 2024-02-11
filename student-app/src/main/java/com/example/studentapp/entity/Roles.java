@@ -1,7 +1,8 @@
 package com.example.studentapp.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.persistence.*;
 
 @Data
 @Table(name = "roles")
