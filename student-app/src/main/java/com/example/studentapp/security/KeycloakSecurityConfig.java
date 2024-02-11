@@ -42,7 +42,7 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http.authorizeRequests()
-                .antMatchers("contact-us").permitAll()
+                .antMatchers("/contact-us").permitAll()
                 .anyRequest().authenticated()
                 .and().exceptionHandling().accessDeniedPage("/access-denied");
     }
