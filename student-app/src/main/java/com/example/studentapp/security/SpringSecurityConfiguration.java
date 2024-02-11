@@ -26,13 +26,15 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/", "/login")
                 .permitAll()
-                .antMatchers("/home").permitAll()
+                .antMatchers("/home").authenticated()
+                .antMatchers("/manage-student").authenticated()
                 .and().csrf().disable()
                 .formLogin().loginPage("/login")
                 .defaultSuccessUrl("/home")
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .and().exceptionHandling().accessDeniedPage("/access-denied");
+                .and().exceptionHandling().accessDeniedPage("/access-denied")
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
     }
 
     @Bean
