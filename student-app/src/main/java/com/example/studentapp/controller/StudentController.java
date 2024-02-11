@@ -13,4 +13,10 @@ public class StudentController {
         return modelAndView;
     }
 
+    @GetMapping("/home")
+    public ModelAndView home() {
+        ModelAndView modelAndView = new ModelAndView("home");
+        return modelAndView;
+    }
+
 }
